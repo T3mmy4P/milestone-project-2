@@ -13,7 +13,7 @@
             <a href="index.html"><h1>Week Planner</h1></a>
             <nav class="navigation">
                 <!-- add icons -->
-                <a href="#" class="nav-links">Events</a>
+                <a href="events-list.html" class="nav-links">Events</a>
                 <a href="#" class="nav-links">Calendar</a>
             </nav>
         </div>
@@ -21,6 +21,30 @@
     <main>
         <h2 class="live-date">Today's Date: </h2>
         <!-- LAYOUT -->
+        <section class="container">
+            <article>
+                <h2></h2>
+                <div class="popup-events">
+                    <div class="event" onclick="eventDetails()">
+                        <h4>Event title</h4>
+                        <p>Time</p>
+                        <span><em>more details..</em></span>
+                    </div>
+                    <div class="event" onclick="eventDetails()">
+                        <h4>Event title</h4>
+                        <p>Time</p>
+                        <span><em>more details..</em></span>
+                    </div>
+                </div>
+                <div class="reminder">
+                    <h4>Reminders</h4>
+                    <input type="checkbox"><hr>
+                    <input type="checkbox"><hr>
+                    <input type="checkbox"><hr>
+                    <input type="checkbox"><hr>
+                </div>
+            </article>
+        </section> 
     </main>
     <footer>
         <!-- COPYRIGHT INFO -->

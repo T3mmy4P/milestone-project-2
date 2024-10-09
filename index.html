@@ -22,7 +22,8 @@
         <h2 class="live-date">Today's Date: </h2>
         <!-- LAYOUT -->
         <section class="container">
-            <article class="day col-15" id="monday" onclick="">
+            <!-- MONDAY -->
+            <article class="day col-15" id="monday" onclick="showOverlay()">
                 <h3>Mon</h3>
                 <h4>Events</h4><hr>
                 <div>
@@ -36,7 +37,8 @@
                 </div>
             </article>
 
-            <article class="day col-15" id="tuesday" onclick="">
+            <!-- TUESDAY -->
+            <article class="day col-15" id="tuesday" onclick="showOverlay()">
                 <h3>Tue</h3>
                 <h4>Events</h4><hr>
                 <div>
@@ -50,7 +52,8 @@
                 </div>
             </article>
 
-            <article class="day col-15" id="wednesday" onclick="">
+            <!-- WEDNESDAY -->
+            <article class="day col-15" id="wednesday" onclick="showOverlay()">
                 <h3>Wed</h3>
                 <h4>Events</h4><hr>
                 <div>
@@ -64,7 +67,8 @@
                 </div>
             </article>
 
-            <article class="day col-15" id="thursday" onclick="">
+            <!-- THURSDAY -->
+            <article class="day col-15" id="thursday" onclick="showOverlay()">
                 <h3>Thur</h3>
                 <h4>Events</h4><hr>
                 <div>
@@ -78,7 +82,8 @@
                 </div>
             </article>
 
-            <article class="day col-15" id="friday" onclick="">
+            <!-- FRIDAY -->
+            <article class="day col-15" id="friday" onclick="showOverlay()">
                 <h3>Fri</h3>
                 <h4>Events</h4><hr>
                 <div>
@@ -92,7 +97,8 @@
                 </div>
             </article>
 
-            <article class="day col-15" id="saturday" onclick="">
+            <!-- SATURDAY -->
+            <article class="day col-15" id="saturday" onclick="showOverlay()">
                 <h3>Sat</h3>
                 <h4>Events</h4><hr>
                 <div>
@@ -106,7 +112,8 @@
                 </div>
             </article>
 
-            <article class="day col-75" id="sunday" onclick="">
+            <!-- SUNDAY -->
+            <article class="day col-75" id="sunday" onclick="showOverlay()">
                 <h3>Sun</h3>
                 <h4>Events</h4><hr>
                 <div>
@@ -121,18 +128,20 @@
             </article>
         </section>
 
-        <!-- OVERLAY -->
-        <section class="overlay-outer" id="overlay">
-            <article class="overlay-inner" id="popup">
+        
+        <!-- OUTER OVERLAY SECTION -->
+        <section class="overlay-outer" id="overlay" onclick="hideOverlay()">
+            <!-- POP UP SECTION -->
+            <article class="overlay-inner" id="popup" onclick="dayDetails()">
                 <h2>MONDAY</h2>
                 <h3>Events</h3>
                 <div class="popup-events">
-                    <div class="event-details">
+                    <div class="event" onclick="eventDetails()">
                         <h4>Event title</h4>
                         <p>Time</p>
                         <span><em>more details..</em></span>
                     </div>
-                    <div class="event-details">
+                    <div class="event" onclick="eventDetails()">
                         <h4>Event title</h4>
                         <p>Time</p>
                         <span><em>more details..</em></span>
@@ -140,10 +149,10 @@
                 </div>
                 <div class="reminder">
                     <h4>Reminders</h4>
-                    <input  type="checkbox"><hr>
-                    <input  type="checkbox"><hr>
-                    <input  type="checkbox"><hr>
-                    <input  type="checkbox"><hr>
+                    <input type="checkbox"><hr>
+                    <input type="checkbox"><hr>
+                    <input type="checkbox"><hr>
+                    <input type="checkbox"><hr>
                 </div>
             </article>
         </section>
