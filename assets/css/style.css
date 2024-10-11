@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    /* background-color: #446183a5; */
+    background-color: #0f418654;
 }
 
 h2 {
@@ -11,6 +11,10 @@ h3 {
     font-size: 2rem;
 }
 
+h4 {
+    font-size: 1rem;
+}
+
 a {
     text-decoration: none;
 }
@@ -18,13 +22,19 @@ a {
 main {
     position: relative;
 }
+
+.border-bottom {
+    border-bottom: 1px solid rgba(211, 211, 211, 0.345);
+}
 /* ---------------------- HEADER SECTION */
+
 .nav-bar {
     max-width: 100%;
     padding-inline: 1rem;
     display: flex;
     justify-content: space-between;
-    background-color: #ffffff;
+    background-color: rgb(212, 212, 213);
+    border-bottom: solid 5px rgb(133, 144, 163);
 }
 
 .nav-bar h1 {
@@ -38,6 +48,11 @@ main {
     margin-block: auto;
 }
 
+.navigation a i {
+    font-size: 1.2rem;
+    margin-inline: 5px;
+}
+
 .nav-links {
     margin-inline: 2.3rem;
     font-size: 1.5rem;
@@ -49,38 +64,45 @@ main {
     font-size: 2.3rem;
     margin-left: 4rem;
     margin-block: 3rem;
+    color: rgba(255, 255, 255, 0.949);
 }
 
 
-/* ---------------------- BODY SECTION */
+/* ---------------------- LAYOUT SECTION */
+
 .container {
   display: flex;
   height: 100%;
   flex-wrap: wrap;
   justify-content: center;
-  margin-block: 3rem;
 }
 
 
 .col-15 {
     width: 15%;
     height: 200px;
-    margin: 5rem;
+    margin-inline: 5rem;
+    margin-bottom: 3rem;
     padding: 1rem;
-    border: 2px solid black;
     border-radius: 20px;
+    background-color: rgb(68, 97, 131);
+    color: rgb(237, 241, 245);
+    box-shadow: 2px 3px 8px rgba(7, 61, 115, 0.407);
 }
 
 .col-75 {
     width: 65%;
     padding: 1.4rem;
     height: 180px;
-    border: 2px solid black;
     border-radius: 20px;
+    background-color: rgb(68, 97, 131);
+    color: rgb(237, 241, 245);
+    box-shadow: 2px 3px 8px rgba(7, 61, 115, 0.407);
 }
 
 
 /* ---------------------- OVERLAY SECTION */
+
 .overlay-outer {
     width: 100%;
     height: 100%;
@@ -95,11 +117,11 @@ main {
 }
 
 .overlay-inner {
-    width: 35%;
-    height: 40%;
+    width: 45%;
+    height: 75%;
     border: none;
     border-radius: 30px;
-    background-color:#ffffff;
+    background-color:rgb(255, 255, 255);
     padding-inline: 2.5rem;
     padding-block: 1.5rem;
     z-index: 5;
@@ -107,31 +129,31 @@ main {
 
 .overlay-inner h2 {
     text-align: center;
+    margin-block: 3rem;
 }
 
 .popup-events {
     border: 1px solid rgba(128, 128, 128, 0.142);
-    width: 80%;
-    height: 25%;
+    width: 70%;
+    height: 35%;
     overflow-y: scroll;
+    margin-bottom: 4rem;
 }
 
-input {
-    display: block;
-}
 
 .reminder {
     margin-top: 2rem;
-    width: 80%;
+    width: 60%;
 }
 
 .event {
     width: 90%;
-    height: 4.8rem;
-    border: 1px solid black;
+    height: auto;
+    border-left: 3px solid rgba(8, 90, 184, 0.755);
+    border-bottom: 1px solid rgba(211, 211, 211, 0.345);
     line-height: 2px;
-    padding-inline: 10px;
-    padding-block: 0;
+    padding-inline: 5px;
+    padding-block: 8px;
     margin-bottom: 5px;
 }
 
@@ -141,28 +163,31 @@ input {
 }
 
 
+.exit-icon, 
+.arrow-left-icon {
+    font-size: 1.3rem;
+    margin: 1rem;   
+}
+
+.exit-icon {
+    float: right;
+}
+
+.arrow-left-icon {
+    float: left;
+}
+
+
 /* ---------------------- EVENT DETAILS SECTION */
 
-.event-details {
-    width: 50%;
-    height: 50%;
-    border: 2px solid black;
-    padding-inline: 3rem;
-    padding-block: 2rem;
-
+.event-modal {
+    display: none;
 }
 
-.event-details h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-
-.event-details p {
-    margin-bottom: 1.5rem;
-}
-
-.event-details p span {
-    font-weight: bold;
-    font-size: 1.2rem;
+.event-modal div {
+    width: 80%;
+    height: 300px;
+    padding: 2rem;
+    border: 1px solid grey;
+    margin: auto;
 }

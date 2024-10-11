@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week Planner</title>
     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -25,14 +26,14 @@
             <!-- MONDAY -->
             <article class="day col-15" id="monday" onclick="showOverlay()">
                 <h3>Mon</h3>
-                <h4>Events</h4><hr>
-                <div>
+                <h4>Events</h4>
+                <div class="border-bottom">
                     <h5></h5>
                     <p></p>
                 </div>
 
-                <h4>Reminders</h4><hr>
-                <div>
+                <h4>Reminders</h4>
+                <div class="border-bottom">
                     <p></p>
                 </div>
             </article>
@@ -40,14 +41,14 @@
             <!-- TUESDAY -->
             <article class="day col-15" id="tuesday" onclick="showOverlay()">
                 <h3>Tue</h3>
-                <h4>Events</h4><hr>
-                <div>
+                <h4>Events</h4>
+                <div class="border-bottom">
                     <h5></h5>
                     <p></p>
                 </div>
 
-                <h4>Reminders</h4><hr>
-                <div>
+                <h4>Reminders</h4>
+                <div class="border-bottom">
                     <p></p>
                 </div>
             </article>
@@ -55,14 +56,14 @@
             <!-- WEDNESDAY -->
             <article class="day col-15" id="wednesday" onclick="showOverlay()">
                 <h3>Wed</h3>
-                <h4>Events</h4><hr>
-                <div>
+                <h4>Events</h4>
+                <div class="border-bottom">
                     <h5></h5>
                     <p></p>
                 </div>
 
-                <h4>Reminders</h4><hr>
-                <div>
+                <h4>Reminders</h4>
+                <div class="border-bottom">
                     <p></p>
                 </div>
             </article>
@@ -70,14 +71,14 @@
             <!-- THURSDAY -->
             <article class="day col-15" id="thursday" onclick="showOverlay()">
                 <h3>Thur</h3>
-                <h4>Events</h4><hr>
-                <div>
+                <h4>Events</h4>
+                <div class="border-bottom">
                     <h5></h5>
                     <p></p>
                 </div>
 
-                <h4>Reminders</h4><hr>
-                <div>
+                <h4>Reminders</h4>
+                <div class="border-bottom">
                     <p></p>
                 </div>
             </article>
@@ -85,14 +86,14 @@
             <!-- FRIDAY -->
             <article class="day col-15" id="friday" onclick="showOverlay()">
                 <h3>Fri</h3>
-                <h4>Events</h4><hr>
-                <div>
+                <h4>Events</h4>
+                <div class="border-bottom">
                     <h5></h5>
                     <p></p>
                 </div>
 
-                <h4>Reminders</h4><hr>
-                <div>
+                <h4>Reminders</h4>
+                <div class="border-bottom">
                     <p></p>
                 </div>
             </article>
@@ -100,14 +101,14 @@
             <!-- SATURDAY -->
             <article class="day col-15" id="saturday" onclick="showOverlay()">
                 <h3>Sat</h3>
-                <h4>Events</h4><hr>
-                <div>
+                <h4>Events</h4>
+                <div class="border-bottom">
                     <h5></h5>
                     <p></p>
                 </div>
 
-                <h4>Reminders</h4><hr>
-                <div>
+                <h4>Reminders</h4>
+                <div class="border-bottom">
                     <p></p>
                 </div>
             </article>
@@ -115,27 +116,33 @@
             <!-- SUNDAY -->
             <article class="day col-75" id="sunday" onclick="showOverlay()">
                 <h3>Sun</h3>
-                <h4>Events</h4><hr>
-                <div>
+                <h4>Events</h4>
+                <div class="border-bottom">
                     <h5></h5>
                     <p></p>
                 </div>
 
-                <h4>Reminders</h4><hr>
-                <div>
+                <h4>Reminders</h4>
+                <div class="border-bottom">
                     <p></p>
                 </div>
             </article>
         </section>
 
         
-        <!-- OUTER OVERLAY SECTION -->
-        <section class="overlay-outer" id="overlay" onclick="hideOverlay()">
+        <!-- OVERLAY SECTION -->
+        <section class="overlay-outer" id="overlay">
             <!-- POP UP SECTION -->
-            <article class="overlay-inner" id="popup" onclick="dayDetails()">
+            <article class="overlay-inner" id="popup" onclick="">
+                <i class="fa-solid fa-xmark exit-icon" onclick="hideOverlay()"></i>
                 <h2>MONDAY</h2>
                 <h3>Events</h3>
                 <div class="popup-events">
+                    <div class="event" onclick="eventDetails()">
+                        <h4>Event title</h4>
+                        <p>Time</p>
+                        <span><em>more details..</em></span>
+                    </div>
                     <div class="event" onclick="eventDetails()">
                         <h4>Event title</h4>
                         <p>Time</p>
@@ -153,6 +160,18 @@
                     <input type="checkbox"><hr>
                     <input type="checkbox"><hr>
                     <input type="checkbox"><hr>
+                </div>
+            </article>
+
+            <!-- EVENT DETAILS -->
+            <article class="overlay-inner event-modal" id="event-details">
+                <i class="fa-solid fa-arrow-left arrow-left-icon" onclick="showPopup()"></i>
+                <i class="fa-solid fa-xmark exit-icon" onclick="hideOverlay()"></i>
+                <h2>Event Title</h2>
+                <div>
+                    <h4>Time: </h4>
+                    <h4>Address: </h4><br>
+                    <h4>Notes: </h4>
                 </div>
             </article>
         </section>

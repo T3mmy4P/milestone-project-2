@@ -5,21 +5,28 @@ let thur = document.getElementById('thursday');
 let fri = document.getElementById('friday');
 let overlay = document.getElementById('overlay');
 let popup = document.getElementById('popup');
+let events = document.getElementById('event-details')
 
 function showOverlay() {
     overlay.style.display = 'flex';
+    if (events.style.display === 'block'){
+        events.style.display = 'none';
+        popup.style.display = 'block';
+    }
 }
 
-function hideOverlay () {
+function hideOverlay() {
     if (overlay.style.display === 'flex'){
        overlay.style.display = 'none';
     } 
 }
 
-function eventDetails () {
-    window.location.href='events-details.html';
+function eventDetails() {
+    popup.style.display = 'none';
+    events.style.display = 'block';
 }
 
-function dayDetails () {
-    window.location.href = 'day-details.html';
+function showPopup() {
+    events.style.display = 'none';
+    popup.style.display = 'block';
 }
