@@ -13,22 +13,27 @@
          <div class="nav-bar">
             <a href="index.html"><h1>Week Planner</h1></a>
             <nav class="navigation">
-                <!-- add icons -->
                 <a href="events-list.html" class="nav-links"><i class="fa-solid fa-list-ul"></i> Events</a>
-                <a href="#" class="nav-links"><i class="fa-solid fa-calendar-days"></i> Calendar</a>
+                <a href="calendar.html" class="nav-links"><i class="fa-solid fa-calendar-days"></i> Calendar</a>
             </nav>
         </div>
     </header>
     <main>
-        <h2 class="live-date">Today's Date: </h2>
+        <section class="date-container">
+            <h2 class="live-date">Today: </h2>
+            <button class="date-btn" onclick="previousMonth()">&lt;</button>
+            <h3 id="month"></h3>
+            <button class="date-btn" onclick="nextMonth()">&gt;</button>
+        </section>
         <!-- LAYOUT -->
-        <section class="container">
+        <!-- remove commented markup once page running and tested!!! -->
+        <section class="container" id="main-page"> 
             <!-- MONDAY -->
-            <article class="day col-15" id="monday" onclick="showOverlay()">
+            <!-- <article class="day col-15" id="monday" onclick="showOverlay()">
                 <h3>Mon</h3>
                 <h4>Events</h4>
                 <div class="border-bottom">
-                    <h5></h5>
+                    <p></p>
                     <p></p>
                 </div>
 
@@ -36,10 +41,10 @@
                 <div class="border-bottom">
                     <p></p>
                 </div>
-            </article>
+            </article> -->
 
             <!-- TUESDAY -->
-            <article class="day col-15" id="tuesday" onclick="showOverlay()">
+            <!-- <article class="day col-15" id="tuesday" onclick="showOverlay()">
                 <h3>Tue</h3>
                 <h4>Events</h4>
                 <div class="border-bottom">
@@ -51,10 +56,10 @@
                 <div class="border-bottom">
                     <p></p>
                 </div>
-            </article>
+            </article> -->
 
             <!-- WEDNESDAY -->
-            <article class="day col-15" id="wednesday" onclick="showOverlay()">
+            <!-- <article class="day col-15" id="wednesday" onclick="showOverlay()">
                 <h3>Wed</h3>
                 <h4>Events</h4>
                 <div class="border-bottom">
@@ -66,10 +71,10 @@
                 <div class="border-bottom">
                     <p></p>
                 </div>
-            </article>
+            </article> -->
 
             <!-- THURSDAY -->
-            <article class="day col-15" id="thursday" onclick="showOverlay()">
+            <!-- <article class="day col-15" id="thursday" onclick="showOverlay()">
                 <h3>Thur</h3>
                 <h4>Events</h4>
                 <div class="border-bottom">
@@ -81,10 +86,10 @@
                 <div class="border-bottom">
                     <p></p>
                 </div>
-            </article>
+            </article> -->
 
             <!-- FRIDAY -->
-            <article class="day col-15" id="friday" onclick="showOverlay()">
+            <!-- <article class="day col-15" id="friday" onclick="showOverlay()">
                 <h3>Fri</h3>
                 <h4>Events</h4>
                 <div class="border-bottom">
@@ -96,10 +101,10 @@
                 <div class="border-bottom">
                     <p></p>
                 </div>
-            </article>
+            </article> -->
 
             <!-- SATURDAY -->
-            <article class="day col-15" id="saturday" onclick="showOverlay()">
+            <!-- <article class="day col-15" id="saturday" onclick="showOverlay()">
                 <h3>Sat</h3>
                 <h4>Events</h4>
                 <div class="border-bottom">
@@ -111,10 +116,10 @@
                 <div class="border-bottom">
                     <p></p>
                 </div>
-            </article>
+            </article> -->
 
             <!-- SUNDAY -->
-            <article class="day col-75" id="sunday" onclick="showOverlay()">
+            <!-- <article class="day col-75" id="sunday" onclick="showOverlay()">
                 <h3>Sun</h3>
                 <h4>Events</h4>
                 <div class="border-bottom">
@@ -126,16 +131,16 @@
                 <div class="border-bottom">
                     <p></p>
                 </div>
-            </article>
+            </article> -->
         </section>
 
         
         <!-- OVERLAY SECTION -->
         <section class="overlay-outer" id="overlay">
             <!-- POP UP SECTION -->
-            <article class="overlay-inner" id="popup" onclick="">
+            <article class="overlay-inner" id="popup">
                 <i class="fa-solid fa-xmark exit-icon" onclick="hideOverlay()"></i>
-                <h2>MONDAY</h2>
+                <h2 id="day-name-long"></h2>
                 <h3>Events</h3>
                 <div class="popup-events">
                     <div class="event" onclick="eventDetails()">
@@ -154,6 +159,10 @@
                         <span><em>more details..</em></span>
                     </div>
                 </div>
+                <section class="event-icon-container">
+                    <i class="fa-solid fa-plus add-event"></i>
+                    <i class="fa-solid fa-trash-can delete-event"></i>
+                </section>
                 <div class="reminder">
                     <h4>Reminders</h4>
                     <input type="checkbox"><hr>
@@ -161,6 +170,7 @@
                     <input type="checkbox"><hr>
                     <input type="checkbox"><hr>
                 </div>
+                <!-- <i class="fa-solid fa-circle-plus" id="add-new"></i> -->
             </article>
 
             <!-- EVENT DETAILS -->
@@ -174,6 +184,18 @@
                     <h4>Notes: </h4>
                 </div>
             </article>
+        </section>
+
+        <section class="overlay-outer" id="overlay">
+            <article class="overlay-inner" id="event-details">
+                <i class="fa-solid fa-arrow-left arrow-left-icon" onclick="showPopup()"></i>
+                <i class="fa-solid fa-xmark exit-icon" onclick="hideOverlay()"></i>
+                <h2>Event Title</h2>
+                <div>
+                    <h4>Time: </h4>
+                    <h4>Address: </h4><br>
+                    <h4>Notes: </h4>
+                </div>
         </section>
     </main>
     <footer>
