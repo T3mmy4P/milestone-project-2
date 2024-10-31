@@ -6,7 +6,6 @@ let wed = document.getElementById('wednesday');
 let thur = document.getElementById('thursday');
 let fri = document.getElementById('friday');
 let overlay = document.getElementById('overlay');
-let eventOverlay = document.getElementById('event-overlay');
 let popup = document.getElementById('popup');
 let events = document.getElementById('event-details')
 let calendar = document.getElementById('calendar');
@@ -14,6 +13,14 @@ let monthEl = document.getElementById('month');
 let mainPage = document.getElementById('main-page');
 let dayNameLong = document.getElementById('day-name-long');
 let dayNameClass = document.getElementsByClassName('planner-day-name')
+
+let monday = document.getElementById('Mon');
+let tuesday = document.getElementById('Tue');
+let wednesday = document.getElementById('Wed');
+let thursday = document.getElementById('Thur');
+let friday = document.getElementById('Fri');
+let saturday = document.getElementById('Sat');
+let sunday = document.getElementById('Sun');
 
 let today = new Date();
 let currentMonth = today.getMonth();
@@ -53,6 +60,7 @@ function createBlankPlanner() {
         // CREATE DAY BLOCK
         let plannerDay = document.createElement('article');
         plannerDay.classList.add('col-15');
+        plannerDay.id = days[i % 7];
         plannerDay.addEventListener("click", showOverlay);
 
         let plannerDayName = document.createElement('h3');
@@ -111,6 +119,35 @@ function createBlankPlanner() {
 // RUN BLANK PLANNER FUNCTION
 createBlankPlanner();
 console.log('planner created successfully')
+
+// UPDATE OVERLAY HEADING
+document.getElementById('Mon').onclick = function(){
+    document.getElementById('day-name-long').innerHTML = "Monday";
+}
+
+document.getElementById('Tue').onclick = function(){
+    document.getElementById('day-name-long').innerHTML = "Tuesday";
+}
+
+document.getElementById('Wed').onclick = function(){
+    document.getElementById('day-name-long').innerHTML = "Wednesday";
+}
+
+document.getElementById('Thur').onclick = function(){
+    document.getElementById('day-name-long').innerHTML = "Thursday";
+}
+
+document.getElementById('Fri').onclick = function(){
+    document.getElementById('day-name-long').innerHTML = "Friday";
+}
+
+document.getElementById('Sat').onclick = function(){
+    document.getElementById('day-name-long').innerHTML = "Saturday";
+}
+
+document.getElementById('Sun').onclick = function(){
+    document.getElementById('day-name-long').innerHTML = "Sunday";
+}
 
 
 // UPDATE PLANNER FUNCTION
@@ -178,11 +215,112 @@ const allDays = document.querySelectorAll('.planner-day-name');
 console.log(allDays);
 
 
-// ADD NEW EVENT MODAL
+// ADD NEW
 
-let addNew = document.getElementById('add-new');
-addNew.addEventListener("click", newEvent)
+// ADD/DELETE EVENT ICONS
 
-function newEvent(){
-    
+
+let deleteEvent = document.getElementById("delete-event");
+deleteEvent.addEventListener("mouseover", showTooltip);
+deleteEvent.addEventListener("mouseout", hideTooltip);
+
+
+function showTooltip(){
+    const tooltip = document.querySelector(".tooltip");
+    tooltip.style.display = 'block';
 }
+
+function hideTooltip(){
+    const tooltip = document.querySelector(".tooltip");
+    tooltip.style.display = 'none';
+}
+
+
+// SELECTED EVENT OVERLAY
+function selectedEvent() {
+    // let checkBox = document.querySelectorAll('.event-checkbox');
+    let checkBoxDiv = document.getElementsByClassName('event-checkbox-container');
+   for (let i = 0; i <= checkBoxDiv.length; i++){
+        if (checkBoxDiv[i].style.backgroundColor === 'none'){
+            checkBoxDiv[i].style.backgroundColor = 'rgba(229, 233, 238)'
+        } else {
+            checkBoxDiv[i].style.backgroundColor = 'none'
+        }
+   }
+}
+
+
+// NEW EVENT MODAL
+function newEventModal() {
+    let myModal = document.getElementById('add-event-modal');
+    popup.style.display = 'none';
+    myModal.style.display = 'flex';
+}
+
+
+function hideEventModal(){
+    let modal = document.getElementById('add-event-modal');
+    modal.style.display = 'none';
+    popup.style.display = 'block';
+}
+
+hideEventModal();
+
+
+let eventData = [
+    mon =
+        {
+        event_title: "", 
+        event_date: "", 
+        event_time: "", 
+        event_notes: ""
+    },
+
+    tue =
+        {
+        event_title: "", 
+        event_date: "", 
+        event_time: "", 
+        event_notes: ""
+    },
+
+    wed =
+        {
+        event_title: "", 
+        event_date: "", 
+        event_time: "", 
+        event_notes: ""
+    },
+
+    thur =
+        {
+        event_title: "", 
+        event_date: "", 
+        event_time: "", 
+        event_notes: ""
+    },
+
+    fri =
+        {
+        event_title: "", 
+        event_date: "", 
+        event_time: "", 
+        event_notes: ""
+    },
+
+    sat =
+        {
+        event_title: "", 
+        event_date: "", 
+        event_time: "", 
+        event_notes: ""
+    },
+
+    sun =
+        {
+        event_title: "", 
+        event_date: "", 
+        event_time: "", 
+        event_notes: ""
+    }
+]
