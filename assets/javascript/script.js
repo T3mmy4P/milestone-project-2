@@ -1,10 +1,4 @@
 // ......................... VARIABLES
-
-let mon = document.getElementById('monday');
-let tue = document.getElementById('tuesday');
-let wed = document.getElementById('wednesday');
-let thur = document.getElementById('thursday');
-let fri = document.getElementById('friday');
 let overlay = document.getElementById('overlay');
 let popup = document.getElementById('popup');
 let events = document.getElementById('event-details')
@@ -25,15 +19,125 @@ let sunday = document.getElementById('Sun');
 let today = new Date();
 let currentMonth = today.getMonth();
 let currentYear = today.getFullYear();
+let currentDay = today.getDay();
+let dateNum = today.getDate();
 
-// STORAGE OBJECT 
-var eventsStorage;
-evntStorage = {
-    eventTitle: "",
-    eventTime: "",
-    eventAddress: "",
-    eventNotes: ""
+// DATA STORAGE 
+let eventData = [
+    mon = [],
+
+    tue = [],
+
+    wed = [],
+
+    thur = [],
+
+    fri = [],
+
+    sat = [],
+
+    sun = [] 
+]
+
+const addEvent = (ev)=>{
+        ev.preventDefault();
+
+        // GET THE VALUE OF THE EVENT DATE TO BE SAVED
+        let date = document.getElementById('event-date').value;
+
+        // GET EVENT DAY INDEX
+        date = new Date(date).getDay();
+        console.log(date);
+
+        // MATCHING EVENT DAY INDEX TO STORAGE DAY INDEX
+        let day = eventData[date];
+        console.log(day);
+
+    
+       let eventInfo = {
+            id: Date.now(),
+            event_title: document.getElementById('event-title').value,
+            event_address: document.getElementById('event-address').value, 
+            event_date: document.getElementById('event-date').value, 
+            event_time: document.getElementById('event-time').value, 
+            event_notes: document.getElementById('event-notes').value
+        }
+
+
+         // CREATES DIV IN POP WINDOW
+         let popupDiv = document.getElementById('popup-events');
+
+         let eventContainer = document.createElement('div');
+         eventContainer.classList.add('event-container');
+         eventContainer.id = eventInfo.id
+        //  eventContainer.id.addEventListener('click', selectedEvent())
+ 
+         let checkBoxContainer = document.createElement('div');
+         checkBoxContainer.classList.add('checkbox-container');
+ 
+         let checkBox = document.createElement('input');
+         checkBox.type = 'checkbox';
+ 
+         let eventDetailContainer = document.createElement('div');
+         eventDetailContainer.classList.add('event');
+ 
+         let eventTitle = document.createElement('h4');
+         eventTitle.innerHTML = document.getElementById('event-title').value;
+         console.log(eventTitle);
+
+         let eventAddress = document.createElement('p');
+         eventAddress.innerHTML = document.getElementById('event-address').value;
+         console.log(eventAddress);
+ 
+         let eventTime =document.createElement('p');
+         eventTime.innerHTML = document.getElementById('event-time').value;
+         console.log(eventTime);
+
+
+        function hideEventModal(){
+            let modal = document.getElementById('add-event-modal');
+            modal.style.display = 'none';
+            popup.style.display = 'block';
+        }
+
+
+        checkBoxContainer.appendChild(checkBox);
+        eventDetailContainer.appendChild(eventTitle);
+        eventDetailContainer.appendChild(eventAddress);
+        eventDetailContainer.appendChild(eventTime);
+
+        eventContainer.appendChild(checkBoxContainer);
+        eventContainer.appendChild(eventDetailContainer);
+
+        popupDiv.appendChild(eventContainer);
+
+
+        // function selectedEvent() {
+        //     let selectedItem = document.querySelectorAll('.checkbox-container');
+
+        //     if (selectedItem.style.backgroundColor === 'none') {
+        //         selectedItem.style.backgroundColor = 'blue';
+        //     } else {
+        //         selectedItem = 'none';
+        //     }
+        // }
+
+  
+
+        // ADD EVENT TO STORAGE ARRAY
+        day.push(eventInfo);  
+        document.forms[0].reset();
+        console.log(eventData);
+
+        // CLOSE MODAL ON COMPLETION
+        hideEventModal();
+        console.log('Event created')
+
 }
+
+document.getElementById('save-btn').addEventListener('click', addEvent);
+console.log(eventData);
+
 
 // ......................... MAIN PAGE
 
@@ -51,7 +155,7 @@ let months = [
     'December'
 ];
 
-let days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
+let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
 
 // CREATE BLANK PLANNER
 function createBlankPlanner() {
@@ -199,6 +303,30 @@ function hideOverlay() {
 function eventDetails() {
     popup.style.display = 'none';
     events.style.display = 'block';
+
+    let eventTitle = document.createElement('h4');
+    eventTitle.innerHTML = document.getElementById('event-title').value;
+    console.log(eventTitle);
+
+    let eventAddress = document.createElement('p');
+    eventAddress.innerHTML = document.getElementById('event-address').value;
+    console.log(eventAddress);
+
+    let eventTime = document.createElement('p');
+    eventTime.innerHTML = document.getElementById('event-time').value;
+    console.log(eventTime);
+
+    let eventNotes = document.createElement('p');
+    eventNotes.innerHTML = documeny.getElementById('event-notes').value;
+    
+
+    let eventInfo = document.getElementById('event-info');
+    eventInfo.appendChild(eventTitle);
+    eventInfo.appendChild(eventAddress);
+    eventInfo.appendChild(eventTime);
+    eventInfo.appendChild(eventNotes);
+
+    events.appendChild(eventInfo);
 }
 
 function showPopup() {
@@ -238,15 +366,13 @@ function hideTooltip(){
 
 // SELECTED EVENT OVERLAY
 function selectedEvent() {
-    // let checkBox = document.querySelectorAll('.event-checkbox');
-    let checkBoxDiv = document.getElementsByClassName('event-checkbox-container');
-   for (let i = 0; i <= checkBoxDiv.length; i++){
-        if (checkBoxDiv[i].style.backgroundColor === 'none'){
-            checkBoxDiv[i].style.backgroundColor = 'rgba(229, 233, 238)'
-        } else {
-            checkBoxDiv[i].style.backgroundColor = 'none'
-        }
-   }
+    let selectedItem = document.getElementById(eventInfo.id)
+
+    if (selectedItem === 'rgba(249, 249, 249, 0.911)') {
+        selectedItem.style.backgroundColor = 'grey';
+    } else {
+        selectedItem = 'rgba(249, 249, 249, 0.911)';
+    }
 }
 
 
@@ -267,60 +393,4 @@ function hideEventModal(){
 hideEventModal();
 
 
-let eventData = [
-    mon =
-        {
-        event_title: "", 
-        event_date: "", 
-        event_time: "", 
-        event_notes: ""
-    },
 
-    tue =
-        {
-        event_title: "", 
-        event_date: "", 
-        event_time: "", 
-        event_notes: ""
-    },
-
-    wed =
-        {
-        event_title: "", 
-        event_date: "", 
-        event_time: "", 
-        event_notes: ""
-    },
-
-    thur =
-        {
-        event_title: "", 
-        event_date: "", 
-        event_time: "", 
-        event_notes: ""
-    },
-
-    fri =
-        {
-        event_title: "", 
-        event_date: "", 
-        event_time: "", 
-        event_notes: ""
-    },
-
-    sat =
-        {
-        event_title: "", 
-        event_date: "", 
-        event_time: "", 
-        event_notes: ""
-    },
-
-    sun =
-        {
-        event_title: "", 
-        event_date: "", 
-        event_time: "", 
-        event_notes: ""
-    }
-]

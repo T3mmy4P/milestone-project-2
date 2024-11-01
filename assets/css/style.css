@@ -70,7 +70,7 @@ main {
     text-align: center;
 }
 
-.live-date {
+#live-date {
     font-size: 2.3rem;
     margin-left: 4rem;
     margin-block: 3rem;
@@ -151,12 +151,12 @@ main {
     margin-block: 3rem;
 }
 
-.popup-events {
+#popup-events {
     border: 1px solid rgba(128, 128, 128, 0.142);
     border-left: none;
     border-top: none;
     width: 80%;
-    height: 30%;
+    height: 200px;
     overflow-y: scroll;
     margin-bottom: 5rem;
 }
@@ -177,29 +177,34 @@ main {
     border-bottom: 1px solid rgba(211, 211, 211, 0.768);
     line-height: 2px;
     padding-inline: 5px;
-    padding-block: 8px;
+    padding-block: 2px;
     margin-bottom: 5px;
 }
 
-.event-checkbox-container {
+.event-container {
     display: flex;
     background-color: none;
 }
 
-.event-checkbox {
-    margin-inline: 7px;
+
+.checkbox-container{
+    padding: 5px;
+    display: flex;
+    vertical-align: center;
+    background-color: none;
 }
 
 .event span {
     float: right;
     font-size: 10px;
+    margin-bottom: 5px;
 }
 
 
 .exit-icon, 
 .arrow-left-icon {
     font-size: 1.3rem;
-    margin: 3rem;   
+    margin: 2rem;   
 }
 
 
@@ -226,6 +231,7 @@ main {
     justify-content: space-between;
     text-transform: lowercase;
 }
+
 
 #delete-event {
     margin-right: 10px;
@@ -368,7 +374,7 @@ main {
 
 #event-info {
     text-align: left;
-    margin: 1rem;
+    margin-block: 3rem;
 }
 
 
