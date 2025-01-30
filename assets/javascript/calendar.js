@@ -11,6 +11,7 @@ let months = [
     'February',
     'March',
     'April',
+    'May',
     'June',
     'July',
     'August',
@@ -20,7 +21,7 @@ let months = [
     'December'
 ];
 
-let days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
+let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
 
 
 let today = new Date();
@@ -56,13 +57,14 @@ function drawBlankCalendar() {
 function updateCalendar(month, year, events) {
     let dayElements = document.querySelectorAll('.calendar-day')
 
-    let firstDayOfMonth = new Date();
+    let firstDayOfMonth = new Date(year, month, 1);
     firstDayOfMonth.setMonth(month);
     firstDayOfMonth.setYear(year);
 
     let firstDayOfWeek = firstDayOfMonth.getDay();
-    let monthName = months[month - 1];
-    let monthWithYear = `${year} - ${monthName}`;
+    console.log(firstDayOfWeek);
+    let monthName = months[month];
+    let monthWithYear = `${monthName} - ${year}`;
     let daysInMonth = new Date(year, month + 1, 0).getDate();
     monthEl.innerText = monthWithYear;
 
@@ -75,8 +77,27 @@ function updateCalendar(month, year, events) {
         if(i >= firstDayOfWeek && dayCounter <= daysInMonth){
             dayNumber.innerText = dayCounter;
             dayCounter++;
+        } else {
+            dayNumber.innerText = ' ';
         }
     }
+
+}
+
+const previousMonth = ()=> {
+    if(currentMonth === 0){
+        currentMonth = 12;
+        currentYear --;
+    }
+    updateCalendar(--currentMonth, currentYear);
+}
+
+const nextMonth = ()=> {
+    if(currentMonth === 11){
+        currentMonth = -1;
+        currentYear ++;
+    }
+    updateCalendar(++currentMonth, currentYear);
 
 }
 

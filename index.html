@@ -13,126 +13,24 @@
          <div class="nav-bar">
             <a href="index.html"><h1>Week Planner</h1></a>
             <nav class="navigation">
-                <a href="events-list.html" class="nav-links"><i class="fa-solid fa-list-ul"></i> Events</a>
-                <a href="calendar.html" class="nav-links"><i class="fa-solid fa-calendar-days"></i> Calendar</a>
+                <i class="fa-solid fa-plus nav-event-btn" onclick="addEventModal()"> Add Event</i>
+                <!-- <a href="events-list.html" class="nav-links"><i class="fa-solid fa-list-ul"></i> Events</a>
+                <a href="calendar.html" class="nav-links"><i class="fa-solid fa-calendar-days"></i> Calendar</a> -->
             </nav>
         </div>
     </header>
     <main>
         <section class="date-container">
-            <h2 id="live-date">Today: </h2>
-            <button class="date-btn" onclick="previousMonth()">&lt;</button>
-            <h3 id="month"></h3>
-            <button class="date-btn" onclick="nextMonth()">&gt;</button>
+            <!-- <h2 id="live-date">Today: </h2> -->
+            <div class="date-nav-container">
+                <!-- <button class="date-btn" onclick="previousMonth()">&lt;</button> -->
+                <h2 id="live-date"></h2>
+                <!-- <button class="date-btn" onclick="nextMonth()">&gt;</button> -->
+            </div>
         </section>
         <!-- LAYOUT -->
         <!-- remove commented markup once page running and tested!!! -->
-        <section class="container" id="main-page"> 
-            <!-- MONDAY -->
-            <!-- <article class="day col-15" id="monday" onclick="showOverlay()">
-                <h3>Mon</h3>
-                <h4>Events</h4>
-                <div class="border-bottom">
-                    <p></p>
-                    <p></p>
-                </div>
-
-                <h4>Reminders</h4>
-                <div class="border-bottom">
-                    <p></p>
-                </div>
-            </article> -->
-
-            <!-- TUESDAY -->
-            <!-- <article class="day col-15" id="tuesday" onclick="showOverlay()">
-                <h3>Tue</h3>
-                <h4>Events</h4>
-                <div class="border-bottom">
-                    <h5></h5>
-                    <p></p>
-                </div>
-
-                <h4>Reminders</h4>
-                <div class="border-bottom">
-                    <p></p>
-                </div>
-            </article> -->
-
-            <!-- WEDNESDAY -->
-            <!-- <article class="day col-15" id="wednesday" onclick="showOverlay()">
-                <h3>Wed</h3>
-                <h4>Events</h4>
-                <div class="border-bottom">
-                    <h5></h5>
-                    <p></p>
-                </div>
-
-                <h4>Reminders</h4>
-                <div class="border-bottom">
-                    <p></p>
-                </div>
-            </article> -->
-
-            <!-- THURSDAY -->
-            <!-- <article class="day col-15" id="thursday" onclick="showOverlay()">
-                <h3>Thur</h3>
-                <h4>Events</h4>
-                <div class="border-bottom">
-                    <h5></h5>
-                    <p></p>
-                </div>
-
-                <h4>Reminders</h4>
-                <div class="border-bottom">
-                    <p></p>
-                </div>
-            </article> -->
-
-            <!-- FRIDAY -->
-            <!-- <article class="day col-15" id="friday" onclick="showOverlay()">
-                <h3>Fri</h3>
-                <h4>Events</h4>
-                <div class="border-bottom">
-                    <h5></h5>
-                    <p></p>
-                </div>
-
-                <h4>Reminders</h4>
-                <div class="border-bottom">
-                    <p></p>
-                </div>
-            </article> -->
-
-            <!-- SATURDAY -->
-            <!-- <article class="day col-15" id="saturday" onclick="showOverlay()">
-                <h3>Sat</h3>
-                <h4>Events</h4>
-                <div class="border-bottom">
-                    <h5></h5>
-                    <p></p>
-                </div>
-
-                <h4>Reminders</h4>
-                <div class="border-bottom">
-                    <p></p>
-                </div>
-            </article> -->
-
-            <!-- SUNDAY -->
-            <!-- <article class="day col-75" id="sunday" onclick="showOverlay()">
-                <h3>Sun</h3>
-                <h4>Events</h4>
-                <div class="border-bottom">
-                    <h5></h5>
-                    <p></p>
-                </div>
-
-                <h4>Reminders</h4>
-                <div class="border-bottom">
-                    <p></p>
-                </div>
-            </article> -->
-        </section>
+        <section class="container" id="main-page"></section>
 
         
         <!-- OVERLAY SECTION -->
@@ -141,93 +39,59 @@
             <article class="overlay-inner" id="popup">
                 <i class="fa-solid fa-xmark exit-icon" onclick="hideOverlay()"></i>
                 <h2 id="day-name-long"></h2>
-                <!-- <h3>Events</h3> -->
                 <section class="event-icon-container">
                     <button class="new-event-btn" onclick="newEventModal()">New Event<i class="fa-solid fa-plus" id="add-event"></i></button>
                     <i class="fa-solid fa-trash-can" id="delete-event"><div class="tooltip">delete</div></i>
-                </section>
-                <div id="popup-events">
-                    <div class="event-container">
-                        <div class="checkbox-container">
-                            <input type="checkbox" onclick="selectedEvent()">
-                        </div>
-                        <div class="event" onclick="eventDetails()">
-                            <h4>Event title</h4>
-                            <p>Time</p>
-                            <span><em>more details..</em></span>
-                        </div>
-                    </div>
-                    <div class="event-container">
-                        <div class="checkbox-container">
-                            <input type="checkbox" onclick="selectedEvent()">
-                        </div>
-                        <div class="event" onclick="eventDetails()">
-                            <h4>Event title</h4>
-                            <p>Time</p>
-                            <span><em>more details..</em></span>
-                        </div>
-                    </div>
-                    <div class="event-container">
-                        <div class="checkbox-container">
-                            <input type="checkbox" onclick="selectedEvent()">
-                        </div>
-                        <div class="event" onclick="eventDetails()">
-                            <h4>Event title</h4>
-                            <p>Time</p>
-                            <span><em>more details..</em></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="reminder">
-                    <h4>Reminders</h4>
-                    <input type="checkbox"><hr>
-                    <input type="checkbox"><hr>
-                    <input type="checkbox"><hr>
-                    <input type="checkbox"><hr>
-                </div>
-                <!-- <i class="fa-solid fa-circle-plus" id="add-new"></i> -->
+                </section> 
+                <div class="popup-events"id="Sun"></div>
+                <div class="popup-events"id="Mon"></div>
+                <div class="popup-events"id="Tue"></div>
+                <div class="popup-events"id="Wed"></div>
+                <div class="popup-events"id="Thur"></div>
+                <div class="popup-events"id="Fri"></div>
+                <div class="popup-events"id="Sat"></div>
             </article>
 
             <!-- EVENT DETAILS -->
             <article class="modal-box" id="event-details">
                 <div class="nav-icon-container">
-                    <i class="fa-solid fa-arrow-left arrow-left-icon" onclick="showPopup()"></i>
-                    <i class="fa-solid fa-xmark exit-icon" onclick="hideOverlay()"></i><br><br>
+                    <!-- <i class="fa-solid fa-arrow-left arrow-left-icon" onclick="showPopup()"></i> -->
+                    <i class="fa-solid fa-xmark exit-icon" onclick="showOverlay()"></i><br><br>
                 </div>
-                <!-- <h3>Event Title</h3> -->
                 <div id="event-info">
-                    <br>
-                    <h4>Date: </h4>
-                    <h4>Time: </h4>
-                    <h4>Address: </h4><br>
-                    <h4>Notes: </h4><hr>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <label for="event-notes">Notes: </label>
+                    <div class="notes"></div>
                 </div>
             </article>
 
             <!-- NEW EVENT MODAL -->
-        <form class="modal-box" id="add-event-modal">
-            <i class="fa-solid fa-xmark modal-exit-icon" onclick="hideEventModal()"></i>
+            <form class="modal-box" id="add-event-modal">
+                <i class="fa-solid fa-xmark modal-exit-icon" onclick="hideEventModal()"></i>
 
-            <label for="event-title">Event: </label>
-            <input type="text" id="event-title" class="event-modal-input" name="event-title" required>
+                <label for="event-title">Event: </label>
+                <input type="text" id="event-title" class="event-modal-input" name="event-title" required>
 
-            <label for="event-address">Address: </label>
-            <input type="text" id="event-address" class="event-modal-input" name="event-address">
+                <label for="event-address">Address: </label>
+                <input type="text" id="event-address" class="event-modal-input" name="event-address">
 
-            <label for="event-date">Date: </label>
-            <input type="date" id="event-date" class="event-modal-input"  name="event-date" required>
+                <label for="event-date">Date: </label>
+                <input type="date" id="event-date" class="event-modal-input"  name="event-date" required>
 
-            
-            <label for="event-time">Time: </label>
-            <input type="time" id="event-time" class="event-modal-input"  name="event-time" required>
+                
+                <label for="event-time">Time: </label>
+                <input type="time" id="event-time" class="event-modal-input"  name="event-time" required>
 
-            <label for="event-notes">Notes: </label>
-            <textarea id="event-notes" name="event-notes"></textarea>
-            <div>
-                <button type="submit" id="save-btn">SAVE</button>
-                <button type="reset" id="reset-btn">RESET</button>
-            </div>
-        </form>
+                <!-- <label for="event-notes">Notes: </label>
+                <textarea id="event-notes" name="event-notes"></textarea> -->
+                <div>
+                    <button type="submit" id="save-btn">SAVE</button>
+                    <button type="reset" id="reset-btn">RESET</button>
+                </div>
+            </form>
         </section>
     </main>
     <footer>

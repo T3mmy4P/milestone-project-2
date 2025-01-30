@@ -1,27 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --secondary-font: 'Jura', sans-serif;
+    --main-font: 'Playwrite IN', sans-serif;
+    --event-title-font: 'Museo Moderno', sans-serif;
+  }
 
 body {
     margin: 0;
-    background-color: rgba(159, 167, 185, 0.471);
+    background-color: #778da9;
 }
 
 h2 {
     font-size: 2.3rem;
-    font-family: 'Outfit', sans-serif;
+    font-family: var(--secondary-font);
 }
 
 h3 {
     font-size: 2.2rem;
-    font-family: 'Outfit', sans-serif;
+    font-family: var(--main-font);
     font-weight: 600;
-    color: rgba(206, 45, 30, 0.923);
+    color: #e76f51;
 }
 
 h4 {
     font-size: 1rem;
-    font-family: 'Jost', sans-serif;
+    font-family: var(--event-title-font);
     font-weight: 600;
+    color:#4c535c;
 }
 
 a {
@@ -32,8 +42,32 @@ main {
     position: relative;
 }
 
+.notes {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    /* border: 1px solid grey; */
+    border-radius: 10px;
+    /* background-color: rgba(230, 230, 230, 0.66); */
+    width: 100px;
+    height: 150px;
+    padding: 8px;
+    margin-top: 1rem;
+    font-size: 15px;
+    line-height: 1.2rem;
+}
+
+span, 
+#event-info label {
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Jost', sans-serif;
+}
+
+
 .border-bottom {
     border-bottom: 1px solid rgba(211, 211, 211, 0.698);
+    
 }
 
 /* ---------------------- HEADER SECTION */
@@ -43,13 +77,15 @@ main {
     padding-inline: 1rem;
     display: flex;
     justify-content: space-between;
-    background-color: rgba(36, 64, 95, 0.564);
-    border-bottom: solid 5px rgb(133, 144, 163);
+    background-color: #1d2d44;
+    border-bottom: solid 5px #ebebeb;
 }
 
 .nav-bar h1 {
     font-size: 2.6rem;
+    font-family: var(--main-font);
     margin-left: 3rem;
+    color: #ffffff;
 }
 
 .navigation {
@@ -72,20 +108,29 @@ main {
 
 #live-date {
     font-size: 2.3rem;
-    margin-left: 4rem;
-    margin-block: 3rem;
-    color: rgba(255, 255, 255, 0.949);
+    margin: auto;
+    color: #ebebeb;
 }
 
 .date-container {
     display: flex;
+    margin-block: 3rem;
+    padding-bottom: 2rem;
 }
 
-.date-btn {
-    height: 20px;
-    margin-inline: 20px;
+.date-nav-container {
+    display: flex;
+    width: 100%;
     margin: auto;
+    align-content: center;
+    justify-content: space-between;
 }
+
+/* .date-btn {
+    height: 25px;
+    width: 30px;
+    cursor: pointer;
+} */
 
 /* ---------------------- LAYOUT SECTION */
 
@@ -102,23 +147,16 @@ main {
 .col-15 {
     width: 15%;
     height: 230px;
-}
-
-.col-75 {
-    width: 67%;
-    height: 180px;
-}
-
-.col-15, 
-.col-75 {
     border-radius: 50px;
-    background-color: rgb(229, 233, 238);
-    color: rgba(19, 39, 57, 0.685);
-    box-shadow: 2px 3px 8px rgba(7, 61, 115, 0.407);
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    /* box-shadow: 2px 3px 8px rgba(115, 117, 118, 0.407); */
     margin-bottom: 2rem;
     margin-inline: 5rem;
     padding: 1.3rem;
+    cursor: pointer;
 }
+
 
 /* ---------------------- OVERLAY SECTION */
 
@@ -132,7 +170,7 @@ main {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .overlay-inner {
@@ -140,7 +178,8 @@ main {
     height: auto;
     border: none;
     border-radius: 70px;
-    background-color: rgba(229, 233, 238, 0.824);
+    /* background-color: rgba(229, 233, 238, 0.984); */
+    background-color: #778da9f7;
     padding-inline: 2.5rem;
     padding-block: 1.5rem;
     z-index: 5;
@@ -151,10 +190,11 @@ main {
     margin-block: 3rem;
 }
 
-#popup-events {
-    border: 1px solid rgba(128, 128, 128, 0.142);
+.popup-events {
+    border: 1px solid rgba(128, 128, 128, 0.644);
     border-left: none;
     border-top: none;
+    border-radius: 8px;
     width: 80%;
     height: 200px;
     overflow-y: scroll;
@@ -162,28 +202,64 @@ main {
 }
 
 
-.reminder {
+.day-block-events {
+    border-top: 2px solid rgba(205, 205, 205, 0.644);
+    border-left: none;
+    border-bottom: none;
+    width: 80%;
+    height: 80px;
+    overflow-y: scroll;
+    margin-bottom: 1.5rem
+}
+
+.planner-date {
+    font-family:'Jura', sans-serif;
+}
+/* .reminder {
     width: 60%;
     margin-left: 1rem;
     margin-bottom: 1rem;
 
-}
+} */
 
 .event {
     width: 95%;
     height: auto;
     background-color: rgba(249, 249, 249, 0.911);
-    border-left: 3px solid rgba(8, 90, 184, 0.755);
+    border-left: 6px solid #219ebc;
     border-bottom: 1px solid rgba(211, 211, 211, 0.768);
+    border-radius: 8px;
     line-height: 2px;
     padding-inline: 5px;
     padding-block: 2px;
     margin-bottom: 5px;
 }
 
+.event-sm {
+    width: 100%;
+    height: auto;
+    background-color: rgba(227, 227, 227, 0.468);
+    border-left: 5px solid #219ebc;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.768);
+    border-radius: 5px;
+    line-height: 1px;
+    padding-inline: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+.event-info {
+    font-family: var(--secondary-font);
+    font-size: 0.93rem;
+    font-weight: 700;
+    color: #13445f;
+}
+
 .event-container {
     display: flex;
     background-color: none;
+    border-radius: 8px;
 }
 
 
@@ -205,6 +281,8 @@ main {
 .arrow-left-icon {
     font-size: 1.3rem;
     margin: 2rem;   
+    color: #ebebeb;
+    cursor: pointer;
 }
 
 
@@ -244,6 +322,11 @@ main {
     margin-inline: 2px;
 }
 
+#add-event-modal textarea {
+    display: flex;
+    flex-direction: column;
+}
+
 .new-event-btn {
     padding: 2px;
     padding-inline: 5px;
@@ -251,17 +334,45 @@ main {
     margin-bottom: 1rem;
     margin-left: 30px;
     cursor: pointer;
-    background-color: rgba(5, 58, 203, 0.877);
+    /* background-color: rgba(5, 58, 203, 0.877); */
+    background-color: #e76f51;
     color: #ffffff;
     border: none;
     font-weight: bold;
 }
 
 .new-event-btn:hover {
-    background-color: rgb(221, 95, 16);
+    background-color: #ebebeb;;
+    color: #e65936;
     border: none;
 }
 
+.nav-event-btn {
+    padding: 20px;
+    /* padding-inline: 5px; */
+    height: auto;
+    margin-bottom: auto;
+    margin-left: 30px;
+    cursor: pointer;
+    background-color: #e76f51;
+    border-radius: 5px;
+    /* border: 3px solid #f6f6f6; */
+    color: #ebebeb;
+    /* border: none; */
+    font-weight: bold;
+}
+
+.nav-event-btn:hover {
+    background-color: rgb(236, 236, 236);
+    border: 3px solid rgb(75, 75, 75);
+    color: #e76f51; 
+}
+
+.nav-event-btn:active {
+    background-color: rgb(48, 48, 48);
+    color: #ffffff;
+    border: 3px solid #f6f6f6;
+}
 
 .tooltip {
     font-size: 7px;
@@ -283,6 +394,7 @@ main {
     margin-bottom: 3rem;
     margin-inline: auto;
     text-align: center;
+    color: #ebebeb;
 }
 
 
@@ -290,7 +402,7 @@ main {
 
 
 .modal-box {
-    background-color: rgba(229, 233, 238, 0.824);
+    background-color: rgba(229, 233, 238, 0.923);
     display: flex;
     flex-direction: column;
     width: 25%;
@@ -344,9 +456,9 @@ main {
 
 #save-btn,
 #reset-btn {
-    width: 50px;
-    height: 30px;
-    padding: 2px;
+    width: 60px;
+    height: 35px;
+    padding: 8px;
     margin-inline: 3px;
     border-radius: 5px;
     border: none;
@@ -373,8 +485,22 @@ main {
 /* ---------------------- EVENT DETAILS SECTION */
 
 #event-info {
-    text-align: left;
+    /* text-align: left; */
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-inline: 40px;
     margin-block: 3rem;
+    /* margin: auto; */
+}
+
+#event-info label{
+    margin-top: 2rem;
+}
+
+#event-info p{
+    font-weight: 550;
+    font-size: 14px;
 }
 
 
@@ -419,4 +545,5 @@ main {
 
 #month {
     margin-block: auto;
+    margin-inline: 40px;
 }
