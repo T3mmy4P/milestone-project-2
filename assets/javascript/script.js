@@ -6,7 +6,6 @@ let calendar = document.getElementById('calendar');
 let monthEl = document.getElementById('month');
 let mainPage = document.getElementById('main-page');
 let dayNameLong = document.getElementById('day-name-long');
-// let dayNameClass = document.getElementsByClassName('planner-day-name')
 let liveDate = document.getElementById('live-date');
 
 
@@ -92,6 +91,7 @@ function createBlankPlanner() {
 
 
         let plannerDayName = document.createElement('h3');
+        plannerDayName.classList.add("planner-day-name")
 
         plannerDayName.innerText = days[i % 7];
         
@@ -328,19 +328,11 @@ const addEvent = (ev)=>{
 
         function containerInfo(){
             let containerId = document.getElementById(eventContainer.id);
-            if (containerId.style.background = 'none'){
-                containerId.style.background = 'rgba(211, 211, 211, 0.698)';
-            } else {
-                containerId.style.background = 'none';
-            };
-
+            console.log(containerId.style.background);
         };
 
         document.getElementById('delete-event').onclick = function(){
             let containerId = document.getElementById(eventContainer.id);
-            console.log(containerId.target.parentNode.id);
-            
-
         };
 
         let checkBox = document.createElement('input');

@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
@@ -8,11 +6,17 @@
     --secondary-font: 'Jura', sans-serif;
     --main-font: 'Playwrite IN', sans-serif;
     --event-title-font: 'Museo Moderno', sans-serif;
+    --bg-color: #778da9;
+    --font-color-main: #d3d3d3b2;
+    --accent-color-main: #e76f51;
+    --accent-color-2: #ebebeb;
+    --white: #ffffff;
+    --event-btn: #F26B0F;
   }
 
 body {
     margin: 0;
-    background-color: #778da9;
+    background-color: var(--bg-color);
 }
 
 h2 {
@@ -20,12 +24,6 @@ h2 {
     font-family: var(--secondary-font);
 }
 
-h3 {
-    font-size: 2.2rem;
-    font-family: var(--main-font);
-    font-weight: 600;
-    color: #e76f51;
-}
 
 h4 {
     font-size: 1rem;
@@ -34,82 +32,52 @@ h4 {
     color:#4c535c;
 }
 
+
 a {
     text-decoration: none;
 }
+
 
 main {
     position: relative;
 }
 
-.notes {
-    display: flex;
-    /* flex-direction: column; */
-    flex-wrap: wrap;
-    /* border: 1px solid grey; */
-    border-radius: 10px;
-    /* background-color: rgba(230, 230, 230, 0.66); */
-    width: 100px;
-    height: 150px;
-    padding: 8px;
-    margin-top: 1rem;
-    font-size: 15px;
-    line-height: 1.2rem;
-}
 
-span, 
-#event-info label {
-    font-weight: bold;
-    font-size: 15px;
-    font-family: 'Jost', sans-serif;
+label {
+    font-weight: 700;
+    font-family: var(--event-title-font);
+    color: var(--white);
 }
 
 
 .border-bottom {
-    border-bottom: 1px solid rgba(211, 211, 211, 0.698);
-    
+    border-bottom: 1px solid var(--font-color-main);
 }
+
 
 /* ---------------------- HEADER SECTION */
 
 .nav-bar {
     max-width: 100%;
-    padding-inline: 1rem;
+    padding-inline: 5rem;
     display: flex;
     justify-content: space-between;
     background-color: #1d2d44;
-    border-bottom: solid 5px #ebebeb;
+    border-bottom: solid 5px var(--accent-color-2);
 }
 
 .nav-bar h1 {
     font-size: 2.6rem;
     font-family: var(--main-font);
-    margin-left: 3rem;
-    color: #ffffff;
+    /* margin-left: 3rem; */
+    color: var(--white);
 }
 
-.navigation {
-    margin-inline: 3rem;
-    display: flex;
-    margin-block: auto;
-}
-
-.navigation a i {
-    font-size: 1.2rem;
-    margin-inline: 5px;
-}
-
-.nav-links {
-    margin-inline: 2.3rem;
-    font-size: 1.5rem;
-    text-decoration: none;
-    text-align: center;
-}
 
 #live-date {
     font-size: 2.3rem;
     margin: auto;
-    color: #ebebeb;
+    color: var(--accent-color-2);
 }
 
 .date-container {
@@ -126,15 +94,8 @@ span,
     justify-content: space-between;
 }
 
-/* .date-btn {
-    height: 25px;
-    width: 30px;
-    cursor: pointer;
-} */
 
 /* ---------------------- LAYOUT SECTION */
-
-
 .container {
   display: flex;
   height: 100%;
@@ -148,13 +109,18 @@ span,
     width: 15%;
     height: 230px;
     border-radius: 50px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    /* box-shadow: 2px 3px 8px rgba(115, 117, 118, 0.407); */
+    background-color: var(--white);
     margin-bottom: 2rem;
     margin-inline: 5rem;
     padding: 1.3rem;
     cursor: pointer;
+}
+
+.planner-day-name {
+    font-size: 2.2rem;
+    font-family: var(--main-font);
+    font-weight: 600;
+    color: var(--accent-color-main);
 }
 
 
@@ -170,19 +136,16 @@ span,
     display: none;
     justify-content: center;
     align-items: center;
-    /* z-index: 2; */
 }
 
 .overlay-inner {
     width: 35%;
     height: auto;
     border: none;
-    border-radius: 70px;
-    /* background-color: rgba(229, 233, 238, 0.984); */
-    background-color: #778da9f7;
+    border-radius: 60px;
+    background-color: var(--bg-color);
     padding-inline: 2.5rem;
     padding-block: 1.5rem;
-    z-index: 5;
 }
 
 .overlay-inner h2 {
@@ -215,12 +178,7 @@ span,
 .planner-date {
     font-family:'Jura', sans-serif;
 }
-/* .reminder {
-    width: 60%;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
 
-} */
 
 .event {
     width: 95%;
@@ -281,7 +239,7 @@ span,
 .arrow-left-icon {
     font-size: 1.3rem;
     margin: 2rem;   
-    color: #ebebeb;
+    color: var(--accent-color-2);
     cursor: pointer;
 }
 
@@ -327,6 +285,10 @@ span,
     flex-direction: column;
 }
 
+#add-event-modal {
+    background-color: var(--bg-color);
+}
+
 .new-event-btn {
     padding: 2px;
     padding-inline: 5px;
@@ -334,50 +296,47 @@ span,
     margin-bottom: 1rem;
     margin-left: 30px;
     cursor: pointer;
-    /* background-color: rgba(5, 58, 203, 0.877); */
-    background-color: #e76f51;
-    color: #ffffff;
+    background-color: var(--event-btn);
+    color: var(--white);
     border: none;
     font-weight: bold;
 }
 
 .new-event-btn:hover {
-    background-color: #ebebeb;;
-    color: #e65936;
+    background-color: var(--accent-color-2);
+    color: var(--accent-color-main);
     border: none;
 }
 
 .nav-event-btn {
-    padding: 20px;
-    /* padding-inline: 5px; */
+    padding: 14px;
+    max-width: 10rem;
     height: auto;
-    margin-bottom: auto;
-    margin-left: 30px;
+    margin-block: auto;
     cursor: pointer;
-    background-color: #e76f51;
+    background-color: var(--event-btn);
+    border: none;
     border-radius: 5px;
-    /* border: 3px solid #f6f6f6; */
-    color: #ebebeb;
-    /* border: none; */
-    font-weight: bold;
+    color: var(--accent-color-2);
+    font-size: 1.2rem;
+    font-family: var(--secondary-font);
+    text-transform: uppercase;
+    font-weight: 450;
 }
 
 .nav-event-btn:hover {
     background-color: rgb(236, 236, 236);
-    border: 3px solid rgb(75, 75, 75);
-    color: #e76f51; 
+    color: var(--accent-color-main);
 }
 
 .nav-event-btn:active {
     background-color: rgb(48, 48, 48);
-    color: #ffffff;
-    border: 3px solid #f6f6f6;
+    color: var(--white);
 }
 
 .tooltip {
     font-size: 7px;
     display: flex;
-    /* text-transform: capitalize; */
     display: none;
     border: 1px solid black;
     background-color: rgb(225, 207, 8);
@@ -394,7 +353,7 @@ span,
     margin-bottom: 3rem;
     margin-inline: auto;
     text-align: center;
-    color: #ebebeb;
+    color: var(--accent-color-2);
 }
 
 
@@ -402,12 +361,12 @@ span,
 
 
 .modal-box {
-    background-color: rgba(229, 233, 238, 0.923);
+    /* background-color: rgba(229, 233, 238, 0.923); */
     display: flex;
     flex-direction: column;
     width: 25%;
-    border-radius: 30px;
-    padding: 25px;
+    border-radius: 60px;
+    padding: 30px;
     height: auto;
     display: none;
 }
@@ -422,17 +381,18 @@ span,
 
 .event-modal-input {
     width: 80%;
-    background-color: rgba(255, 255, 255, 0.947);
+    background-color: rgba(244, 244, 244, 0.917);
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 8px;
     margin-bottom: 1rem;
-    height: 15px;
-    font-size: 12px;
+    height: 25px;
+    font-size: 15px;
 }
 
 .modal-exit-icon {
     margin-block: 1rem;
+    color: var(--accent-color-2);
     text-align: right;
     margin-right: 20px;
 }
@@ -440,18 +400,6 @@ span,
 
 #event-time {
     width: 20%;
-}
-
-#event-notes {
-    min-height: 100px;
-    background-color: #ffffff;
-    width: 82%;
-    border: 1px solid black;
-    border-radius: 5px;
-    overflow: scroll;
-    font-size: 12px;
-    padding: 10px;
-    margin-bottom: 1rem;
 }
 
 #save-btn,
@@ -467,7 +415,7 @@ span,
 
 #save-btn {
     background-color: rgba(0, 128, 0, 0.900);
-    color: #ffffff;
+    color: var(--white);
 }
 
 #save-btn:hover{
@@ -476,74 +424,429 @@ span,
 
 #reset-btn {
     background-color: rgba(255, 0, 0, 0.900);
-    color: #ffffff;
+    color: var(--white);
 }
 
 #reset-btn:hover {
     background-color: rgba(224, 17, 17, 0.911);
 }
-/* ---------------------- EVENT DETAILS SECTION */
 
-#event-info {
-    /* text-align: left; */
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    padding-inline: 40px;
-    margin-block: 3rem;
-    /* margin: auto; */
+
+
+
+/* ---------------------- MEDIA QUERIES */
+
+@media screen and (max-width: 600px){
+    h4 {
+        font-size: 0.8rem;
+    }
+
+    .nav-bar {
+        padding-inline: 2rem;
+    }
+
+    .nav-bar h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-event-btn {
+        max-width: 10rem;
+        padding: 8px;
+        font-size: 1rem;
+    }
+
+    #live-date {
+        font-size: 1.4rem;
+        margin: auto;
+    }
+
+    .col-15 {
+        width: 50%;
+        height: 200px;
+    }
+
+    .planner-day-name {
+        font-size: 1.2rem;
+    }
+
+    .overlay-inner {
+        width: 100%;
+        padding-inline: 2rem;
+        padding-block: 1rem;
+    }
+
+    .overlay-inner h2 {
+        font-size: 1.6rem;
+        margin-block: 1rem;
+    }
+
+    .popup-events {
+        height: 150px;
+        margin-bottom: 2rem;
+    }
+
+    .event-info {
+        font-size: 0.7rem;
+    }
+
+    .new-event-btn {
+        padding: 4px;
+        font-size: 0.7rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #delete-event {
+        font-size: 1rem;
+    }
+
+    .modal-box {
+        width: 100%;
+    }
+
+    .event-modal-input {
+        padding: 3px;
+        height: 20px;
+        font-size: 11px;
+    }
+
+    .exit-icon,
+    .modal-exit-icon {
+        font-size: 1.1rem;
+    }
+
 }
 
-#event-info label{
-    margin-top: 2rem;
+
+@media screen and (min-width: 600px){
+    h4 {
+        font-size: 1rem;
+    }
+
+    .nav-bar {
+        padding-inline: 2rem;
+    }
+
+    .nav-bar h1 {
+        font-size: 2rem;
+    }
+
+    .nav-event-btn {
+        max-width: 10rem;
+        padding:12px;
+        font-size: 1rem;
+    }
+
+    #live-date {
+        font-size: 1.8rem;
+        margin: auto;
+    }
+
+    .col-15 {
+        width: 40%;
+        height: 250px;
+    }
+
+    .planner-day-name {
+        font-size: 1.7rem;
+    }
+
+    .overlay-inner {
+        width: 70%;
+        padding-inline: 2rem;
+        padding-block: 1rem;
+    }
+
+    .overlay-inner h2 {
+        font-size: 1.8rem;
+        margin-block: 1rem;
+    }
+
+    .popup-events {
+        margin-bottom: 2rem;
+    }
+
+
+    .event-info {
+        font-size: 0.8rem;
+    }
+
+    .new-event-btn {
+        padding: 5px;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #delete-event {
+        font-size: 1.1rem;
+    }
+
+    .modal-box {
+        width: 60%;
+    }
+
+    .event-modal-input {
+        padding: 5px;
+        height: 22px;
+        font-size: 14px;
+    }
+
+    .exit-icon,
+    .modal-exit-icon {
+        font-size: 1.1rem;
+    }
+
 }
 
-#event-info p{
-    font-weight: 550;
-    font-size: 14px;
+
+@media screen and (min-width: 768px) {
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    .nav-bar {
+        padding-inline: 2.2rem;
+    }
+
+    .nav-bar h1 {
+        font-size: 2.4rem;
+    }
+
+    .nav-event-btn {
+        max-width: 15rem;
+        padding: 16px;
+        font-size: 1.4rem;
+    }
+
+    #live-date {
+        font-size: 2.3rem;
+        margin: auto;
+    }
+
+    .col-15 {
+        width: 35%;
+        height: 270px;
+    }
+
+    .planner-day-name {
+        font-size: 1.9rem;
+    }
+
+    .overlay-inner {
+        width: 60%;
+        padding-inline: 2rem;
+        padding-block: 1rem;
+    }
+
+    .overlay-inner h2 {
+        font-size: 2.3rem;
+        margin-block: 1rem;
+    }
+
+    .popup-events {
+        margin-bottom: 2rem;
+    }
+
+
+    .event-info {
+        font-size: 1rem;
+    }
+
+    .new-event-btn {
+        padding: 10px;
+        height: 40px;
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    #delete-event {
+        font-size: 1.6rem;
+    }
+
+    .modal-box {
+        width: 65%;
+    }
+
+    .event-modal-input {
+        padding: 8px;
+        height: 26px;
+        font-size: 18px;
+    }
+
+    .exit-icon,
+    .modal-exit-icon {
+        font-size: 1.4rem;
+    }
+
 }
 
 
+@media screen and (min-width: 992px){
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    .nav-bar {
+        padding-inline: 2.4rem;
+    }
+
+    .nav-bar h1 {
+        font-size: 2.8rem;
+    }
+
+    .nav-event-btn {
+        max-width: 15rem;
+        padding: 16px;
+        font-size: 1.4rem;
+    }
+
+    #live-date {
+        font-size: 2.3rem;
+        margin: auto;
+    }
+
+    .col-15 {
+        width: 25%;
+        height: 270px;
+    }
+
+    .planner-day-name {
+        font-size: 1.8rem;
+    }
+
+    .event-name {
+        font-size: 1rem;
+    }
+
+    .overlay-inner {
+        width: 55%;
+        padding-inline: 2rem;
+        padding-block: 1rem;
+    }
+
+    .overlay-inner h2 {
+        font-size: 2.3rem;
+        margin-block: 1rem;
+    }
+
+    .popup-events {
+        margin-bottom: 2rem;
+    }
 
 
-/* ---------------------- EVENT LIST PAGE */
+    .event-info {
+        font-size: 0.9rem;
+    }
 
+    .new-event-btn {
+        padding: 6px;
+        height: 35px;
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
 
-/* ---------------------- CALENDAR PAGE */
+    #delete-event {
+        font-size: 1.2rem;
+    }
 
-#calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 130px);
-    gap: 2px;
-    padding: 5rem;
-    
+    .modal-box {
+        width: 55%;
+    }
+
+    .event-modal-input {
+        padding: 8px;
+        height: 24px;
+        font-size: 16px;
+    }
+
+    .exit-icon,
+    .modal-exit-icon {
+        font-size: 1.4rem;
+    }
 
 }
 
-.calendar-day {
-    width: 130px;
-    height: 130px;
-    padding: 5px;
-    background-color: rgb(229, 233, 238);
-    color: rgba(19, 39, 57, 0.685);
-    border: 1px solid grey;
-    border-radius: 2px;
-}
 
-.calendar-day:hover {
-    background-color: rgb(143, 148, 161);
-    transition: all 250ms;
-    color: rgb(255, 255, 255);
-}
+@media screen and (min-width: 1200px){
+    h4 {
+        font-size: 1.1rem;
+    }
 
-.calendar-day-number {
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-    margin: auto;
-}
+    .nav-bar {
+        padding-inline: 2.4rem;
+    }
 
-#month {
-    margin-block: auto;
-    margin-inline: 40px;
+    .nav-bar h1 {
+        font-size: 2.8rem;
+    }
+
+    .nav-event-btn {
+        max-width: 15rem;
+        padding: 16px;
+        font-size: 1.2rem;
+    }
+
+    #live-date {
+        font-size: 2.3rem;
+        margin: auto;
+    }
+
+    .col-15 {
+        width: 15%;
+        height: 270px;
+    }
+
+    .planner-day-name {
+        font-size: 1.8rem;
+    }
+
+    .event-name {
+        font-size: 1rem;
+    }
+
+    .overlay-inner {
+        width: 30%;
+        padding-inline: 2.2rem;
+        padding-block: 1rem;
+    }
+
+    .overlay-inner h2 {
+        font-size: 2.3rem;
+        margin-block: 1rem;
+    }
+
+    .popup-events {
+        margin-bottom: 2rem;
+    }
+
+
+    .event-info {
+        font-size: 0.9rem;
+    }
+
+    .new-event-btn {
+        padding: 6px;
+        height: 35px;
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    #delete-event {
+        font-size: 1.2rem;
+    }
+
+    .modal-box {
+        width: 25%;
+    }
+
+    .event-modal-input {
+        padding: 8px;
+        height: 24px;
+        font-size: 16px;
+    }
+
+    .exit-icon,
+    .modal-exit-icon {
+        font-size: 1.4rem;
+    }
+
 }

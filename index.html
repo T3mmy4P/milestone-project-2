@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week Planner</title>
     <link href="assets/css/style.css" rel="stylesheet">
@@ -12,11 +12,10 @@
         <!-- HEADER -->
          <div class="nav-bar">
             <a href="index.html"><h1>Week Planner</h1></a>
-            <nav class="navigation">
+            <button class="nav-event-btn" onclick="addEventModal()"><i class="fa-solid fa-plus"></i><span> Add Event</span></button>
+            <!-- <nav class="navigation">
                 <i class="fa-solid fa-plus nav-event-btn" onclick="addEventModal()"> Add Event</i>
-                <!-- <a href="events-list.html" class="nav-links"><i class="fa-solid fa-list-ul"></i> Events</a>
-                <a href="calendar.html" class="nav-links"><i class="fa-solid fa-calendar-days"></i> Calendar</a> -->
-            </nav>
+            </nav> -->
         </div>
     </header>
     <main>
@@ -58,14 +57,12 @@
                     <!-- <i class="fa-solid fa-arrow-left arrow-left-icon" onclick="showPopup()"></i> -->
                     <i class="fa-solid fa-xmark exit-icon" onclick="showOverlay()"></i><br><br>
                 </div>
-                <div id="event-info">
+                <!-- <div id="event-info">
                     <p></p>
                     <p></p>
                     <p></p>
                     <p></p>
-                    <label for="event-notes">Notes: </label>
-                    <div class="notes"></div>
-                </div>
+                </div> -->
             </article>
 
             <!-- NEW EVENT MODAL -->
