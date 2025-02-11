@@ -13,22 +13,16 @@
          <div class="nav-bar">
             <a href="index.html"><h1>Week Planner</h1></a>
             <button class="nav-event-btn" onclick="addEventModal()"><i class="fa-solid fa-plus"></i><span> Add Event</span></button>
-            <!-- <nav class="navigation">
-                <i class="fa-solid fa-plus nav-event-btn" onclick="addEventModal()"> Add Event</i>
-            </nav> -->
         </div>
     </header>
     <main>
         <section class="date-container">
-            <!-- <h2 id="live-date">Today: </h2> -->
             <div class="date-nav-container">
-                <!-- <button class="date-btn" onclick="previousMonth()">&lt;</button> -->
                 <h2 id="live-date"></h2>
-                <!-- <button class="date-btn" onclick="nextMonth()">&gt;</button> -->
             </div>
         </section>
+
         <!-- LAYOUT -->
-        <!-- remove commented markup once page running and tested!!! -->
         <section class="container" id="main-page"></section>
 
         
@@ -54,15 +48,8 @@
             <!-- EVENT DETAILS -->
             <article class="modal-box" id="event-details">
                 <div class="nav-icon-container">
-                    <!-- <i class="fa-solid fa-arrow-left arrow-left-icon" onclick="showPopup()"></i> -->
                     <i class="fa-solid fa-xmark exit-icon" onclick="showOverlay()"></i><br><br>
                 </div>
-                <!-- <div id="event-info">
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                </div> -->
             </article>
 
             <!-- NEW EVENT MODAL -->
@@ -82,8 +69,6 @@
                 <label for="event-time">Time: </label>
                 <input type="time" id="event-time" class="event-modal-input"  name="event-time" required>
 
-                <!-- <label for="event-notes">Notes: </label>
-                <textarea id="event-notes" name="event-notes"></textarea> -->
                 <div>
                     <button type="submit" id="save-btn">SAVE</button>
                     <button type="reset" id="reset-btn">RESET</button>

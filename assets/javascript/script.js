@@ -24,19 +24,7 @@ let currentYear = today.getFullYear();
 let currentDay = today.getDay();
 let dateNum = today.getDate();
 
-const previousMonth = ()=> {
-    let daysInMonth = new Date(year, month + 1, 0).getDate();
-    console.log(daysInMonth);
-    
-    --currentDay;
-    updatePlanner(currentMonth, currentYear);
-}
 
-const nextMonth = ()=> {
-    ++currentDay;
-    updatePlanner(currentMonth, currentYear);
-
-}
 
 let months = [
     'January',
@@ -173,7 +161,7 @@ document.getElementById('Sunday').onclick = function(){
     deleteEvent.addEventListener("mouseout", hideTooltip);    
 }
 
-
+// DAYBLOCK CLICK FUNCTION
 document.getElementById('Monday').onclick = function(){
     document.getElementById('day-name-long').innerHTML = "Monday";
 
@@ -289,7 +277,6 @@ const addEvent = (ev)=>{
     let title =document.getElementById('event-title').value;
     let address =document.getElementById('event-address').value;
     let time =document.getElementById('event-time').value;
-    // let notes =document.getElementById('event-notes').value;
 
     // GET EVENT DAY INDEX
     date = new Date(date).getDay();
@@ -307,7 +294,6 @@ const addEvent = (ev)=>{
         event_address: document.getElementById('event-address').value, 
         event_date: document.getElementById('event-date').value, 
         event_time: document.getElementById('event-time').value, 
-        // event_notes: document.getElementById('event-notes').value
     }
 
     
@@ -316,8 +302,6 @@ const addEvent = (ev)=>{
         let popupDiv = document.getElementById(days[date]);
         console.log(popupDiv);
 
-        // let dayBlock = document.getElementById(daysLong[date])
-        // console.log(dayBlock);
 
         let eventContainer = document.createElement('div');
         eventContainer.classList.add('event-container');
@@ -326,18 +310,14 @@ const addEvent = (ev)=>{
         let checkBoxContainer = document.createElement('div');
         checkBoxContainer.classList.add('checkbox-container');
 
-        function containerInfo(){
-            let containerId = document.getElementById(eventContainer.id);
-            console.log(containerId.style.background);
-        };
 
+        // DELETE BUTTON FUNCTION (NOT FINISHED)
         document.getElementById('delete-event').onclick = function(){
             let containerId = document.getElementById(eventContainer.id);
         };
 
         let checkBox = document.createElement('input');
         checkBox.type = 'checkbox';
-        checkBox.addEventListener('click', containerInfo)
 
         let eventDetailContainer = document.createElement('div');
         eventDetailContainer.classList.add('event');
@@ -396,8 +376,6 @@ const addEvent = (ev)=>{
     eventDetailContainer.appendChild(eventTime);
 
     dBlockEventDetails.appendChild(dBlockEventTitle);
-    // dBlockEventDetails.appendChild(dBlockEventDate);
-    // dBlockEventDetails.appendChild(dBlockEventTime);
 
     eventContainer.appendChild(checkBoxContainer);
     eventContainer.appendChild(eventDetailContainer);
@@ -406,12 +384,6 @@ const addEvent = (ev)=>{
     
     popupDiv.appendChild(eventContainer);
     dayBlock.appendChild(dBlockEventContainer);
-
-    // popupDiv.appendChild(eventContainer);
-    
-    
-
-    // document.getElementById(eventDetailContainer.id).addEventListener('click', eventDetails);
 
 
 
@@ -424,17 +396,12 @@ const addEvent = (ev)=>{
     hideEventModal();
     hideOverlay();
     console.log('Event created')
-
-        
-
 }
 
 
 // SAVE BUTTON CLICK EVENT
 document.getElementById('save-btn').addEventListener('click', addEvent);
 console.log(eventData);
-
-
 
 
 // SHOW OVERLAY FUNCTION
@@ -452,23 +419,6 @@ function hideOverlay() {
 }
 
 
-// function showPopup() {
-//     // events.style.display = 'none';
-//     popup.style.display = 'block';
-// }
-
-// function showEventOverlay() {
-//     eventOverlay.style.display = 'flex';
-    
-// }
-
-
-
-// // ADD/DELETE EVENT ICONS
-// let deleteEvent = document.getElementById("delete-event");
-// deleteEvent.addEventListener("mouseover", showTooltip);
-// deleteEvent.addEventListener("mouseout", hideTooltip);
-
 
 function showTooltip(){
     const tooltip = document.querySelector(".tooltip");
@@ -484,7 +434,6 @@ function hideTooltip(){
 
 
 // ADD NEW EVENT IN OVERLAY SECTION
-
 function newEventModal() {
     let myModal = document.getElementById('add-event-modal');
     myModal.style.display = 'flex';

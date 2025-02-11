@@ -56,7 +56,6 @@ label {
 
 
 /* ---------------------- HEADER SECTION */
-
 .nav-bar {
     max-width: 100%;
     padding-inline: 5rem;
@@ -69,7 +68,6 @@ label {
 .nav-bar h1 {
     font-size: 2.6rem;
     font-family: var(--main-font);
-    /* margin-left: 3rem; */
     color: var(--white);
 }
 
@@ -107,7 +105,7 @@ label {
 
 .col-15 {
     width: 15%;
-    height: 230px;
+    height: 200px;
     border-radius: 50px;
     background-color: var(--white);
     margin-bottom: 2rem;
@@ -125,7 +123,6 @@ label {
 
 
 /* ---------------------- OVERLAY SECTION */
-
 .overlay-outer {
     width: 100%;
     height: 100%;
@@ -358,10 +355,7 @@ label {
 
 
 /* ---------------------- ADD NEW SECTION */
-
-
 .modal-box {
-    /* background-color: rgba(229, 233, 238, 0.923); */
     display: flex;
     flex-direction: column;
     width: 25%;
@@ -435,7 +429,6 @@ label {
 
 
 /* ---------------------- MEDIA QUERIES */
-
 @media screen and (max-width: 600px){
     h4 {
         font-size: 0.8rem;
@@ -768,7 +761,7 @@ label {
 
 @media screen and (min-width: 1200px){
     h4 {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
 
     .nav-bar {
@@ -776,31 +769,31 @@ label {
     }
 
     .nav-bar h1 {
-        font-size: 2.8rem;
+        font-size: 2.2rem;
     }
 
     .nav-event-btn {
-        max-width: 15rem;
-        padding: 16px;
-        font-size: 1.2rem;
+        max-width: 10rem;
+        padding: 12px;
+        font-size: 1.1rem;
     }
 
     #live-date {
-        font-size: 2.3rem;
+        font-size: 2rem;
         margin: auto;
     }
 
     .col-15 {
         width: 15%;
-        height: 270px;
+        height: 230px;
     }
 
     .planner-day-name {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 
     .event-name {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .overlay-inner {
@@ -810,7 +803,7 @@ label {
     }
 
     .overlay-inner h2 {
-        font-size: 2.3rem;
+        font-size: 1.8rem;
         margin-block: 1rem;
     }
 
@@ -820,18 +813,18 @@ label {
 
 
     .event-info {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     .new-event-btn {
-        padding: 6px;
-        height: 35px;
-        font-size: 0.8rem;
-        margin-bottom: 0.8rem;
+        padding: 5px;
+        height: 30px;
+        font-size: 0.7rem;
+        margin-bottom: 0.4rem;
     }
 
     #delete-event {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .modal-box {
@@ -839,14 +832,14 @@ label {
     }
 
     .event-modal-input {
-        padding: 8px;
-        height: 24px;
-        font-size: 16px;
+        padding: 5px;
+        height: 20px;
+        font-size: 12px;
     }
 
     .exit-icon,
     .modal-exit-icon {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 
 }
