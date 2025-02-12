@@ -1,3 +1,5 @@
+# Milestone Project 2 - Simple Weekly Planner
+
 ## Table of contents
 
 - [Overview](#overview)
