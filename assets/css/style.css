@@ -12,6 +12,7 @@
     --accent-color-2: #ebebeb;
     --white: #ffffff;
     --event-btn: #F26B0F;
+    --event-border: #219ebc;
   }
 
 body {
@@ -126,7 +127,7 @@ label {
 .overlay-outer {
     width: 100%;
     height: 100%;
-    background-color: rgba(22, 24, 27, 0.811);
+    background-color: #16181bcf;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -151,7 +152,6 @@ label {
 }
 
 .popup-events {
-    border: 1px solid rgba(128, 128, 128, 0.644);
     border-left: none;
     border-top: none;
     border-radius: 8px;
@@ -163,7 +163,6 @@ label {
 
 
 .day-block-events {
-    border-top: 2px solid rgba(205, 205, 205, 0.644);
     border-left: none;
     border-bottom: none;
     width: 80%;
@@ -180,9 +179,8 @@ label {
 .event {
     width: 95%;
     height: auto;
-    background-color: rgba(249, 249, 249, 0.911);
-    border-left: 6px solid #219ebc;
-    border-bottom: 1px solid rgba(211, 211, 211, 0.768);
+    background-color: var(--white);
+    border-left: 6px solid var(--event-border);
     border-radius: 8px;
     line-height: 2px;
     padding-inline: 5px;
@@ -193,9 +191,8 @@ label {
 .event-sm {
     width: 100%;
     height: auto;
-    background-color: rgba(227, 227, 227, 0.468);
-    border-left: 5px solid #219ebc;
-    border-bottom: 1px solid rgba(211, 211, 211, 0.768);
+    background-color: #e3e3e377;
+    border-left: 5px solid var(--event-border);
     border-radius: 5px;
     line-height: 1px;
     padding-inline: 5px;
@@ -208,7 +205,7 @@ label {
     font-family: var(--secondary-font);
     font-size: 0.93rem;
     font-weight: 700;
-    color: #13445f;
+    color: #1d2d44;
 }
 
 .event-container {
@@ -322,12 +319,12 @@ label {
 }
 
 .nav-event-btn:hover {
-    background-color: rgb(236, 236, 236);
+    background-color: var(--accent-color-2);
     color: var(--accent-color-main);
 }
 
 .nav-event-btn:active {
-    background-color: rgb(48, 48, 48);
+    background-color: var(--accent-color-main);
     color: var(--white);
 }
 
@@ -335,8 +332,8 @@ label {
     font-size: 7px;
     display: flex;
     display: none;
-    border: 1px solid black;
-    background-color: rgb(225, 207, 8);
+    border: 1px solid #000000;
+    background-color: #e1cf08;
     border-radius: 2px;
     padding: 2px;
     margin-top: 2px;
@@ -375,7 +372,7 @@ label {
 
 .event-modal-input {
     width: 80%;
-    background-color: rgba(244, 244, 244, 0.917);
+    background-color: #f4f4f4ea;
     border: none;
     border-radius: 10px;
     padding: 8px;
@@ -408,21 +405,21 @@ label {
 }
 
 #save-btn {
-    background-color: rgba(0, 128, 0, 0.900);
+    background-color: #008000e6;
     color: var(--white);
 }
 
 #save-btn:hover{
-    background-color: rgba(20, 106, 20, 0.911);
+    background-color: #146a14e8;
 }
 
 #reset-btn {
-    background-color: rgba(255, 0, 0, 0.900);
+    background-color: #ff0000e6;
     color: var(--white);
 }
 
 #reset-btn:hover {
-    background-color: rgba(224, 17, 17, 0.911);
+    background-color: #e01111e8;
 }
 
 
