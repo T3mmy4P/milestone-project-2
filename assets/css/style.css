@@ -81,8 +81,9 @@ label {
 
 .date-container {
     display: flex;
-    margin-block: 3rem;
-    padding-bottom: 2rem;
+    /* margin-block: 3rem; */
+    padding-bottom: 5rem;
+    padding-top: 3rem;
 }
 
 .date-nav-container {
@@ -101,6 +102,7 @@ label {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 
@@ -130,7 +132,6 @@ label {
     background-color: #16181bcf;
     position: absolute;
     top: 0;
-    bottom: 0;
     display: none;
     justify-content: center;
     align-items: center;
