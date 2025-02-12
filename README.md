@@ -18,11 +18,16 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
   - [New Event](#new-event)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Validations](#validations)
+  - [HTML](#html)
+  - [CSS](#css)
+- [Deployment](#deployment)
+  - [Testing](#testing)
+  - [Bugs](#bugs)
+- [Credits](#credits)
+  - [Useful Rescources](#useful-resources)
+  - [Acknowledgments](#acknowledgments)
 
 
 ## Overview
@@ -63,14 +68,14 @@ This site allows you to create tasks (labelled as events) in a dedicated weekly 
 ### Typography
 Source: Google Fonts
 
-- Playwrite IN
+- Playwrite IN: 
   Used for the main header and day names on main page.
 
-- Jura
+- Jura: 
   Used for the live date, event title and add event button on main page.
   Used for the day names and event details in pop up window.
 
-- Museo Moderno
+- Museo Moderno: 
   Used for the created event name/title on main page and pop up window.
   Used for the labels in the new event window.
 
@@ -100,10 +105,9 @@ On clicking the new event button in the main page or popup window, a create even
 
 This is straight forward as it allows users to create events by adding information available.
 
+
 ## My process
-
 ### Built with
-
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
@@ -112,52 +116,52 @@ This is straight forward as it allows users to create events by adding informati
 - JavaScript 
 
 
-### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
 ### Continued development
+Delete Icon:  
+ - The delete icon in the popup window is not functional as of yet but the goal is implement it in a way that you can clicked/selected events.
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Past Event:
+ - Event detail background changes color when it's past due date.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Information Storage:
+ - Information is stored on a different platform so information is not lost on refresh.
 
-### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+## Validations
+### HTML
+![](./assets/images/HTML%20Validation.png)
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+
+### CSS
+![](./assets/images/CSS%20Validation.png)
+
+
+## Deployment
+The site was deployed to Git Hub pages using the following steps:
+
+  - In the Github repository, click the Setting tab.
+  - Under General, navigate to Code and Automation and select 'Pages'.
+  - In the Build and Deployment section for Source, select 'Deploy from a branch' from the drop-down list.
+  - For Branch, select 'main' from the drop-down list and Save.
+  - On the top of the page, the link to the complete website is provided.
+  - The deployed site will update automatically upon new commits to the master branch.
+
+
+### Testing
+ - Tested on different devices with varying screensizes and project renders well.
+
+
+### Bugs
+- Information is deleted on refresh
+
 
 ## Author
-
 - Website - [Temitope Edwards](https://t3mmy4p.github.io/milestone-project-2/)
 
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+## Credits
+### Useful resources
+- [MDN Web Docs](https://developer.mozilla.org/en-US/)
+- [YouTube](https://www.youtube.com/)
 
-## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

@@ -210,7 +210,6 @@ label {
 
 .event-container {
     display: flex;
-    background-color: none;
     border-radius: 8px;
 }
 
@@ -219,7 +218,6 @@ label {
     padding: 5px;
     display: flex;
     vertical-align: center;
-    background-color: none;
 }
 
 .event span {

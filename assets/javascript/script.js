@@ -19,10 +19,7 @@ let sunday = document.getElementById('Sun');
 
 let today = new Date();
 liveDate.innerHTML = "Date:  " + " " + today.toDateString();
-let currentMonth = today.getMonth();
-let currentYear = today.getFullYear();
-let currentDay = today.getDay();
-let dateNum = today.getDate();
+
 
 
 
@@ -306,15 +303,16 @@ const addEvent = (ev)=>{
         let eventContainer = document.createElement('div');
         eventContainer.classList.add('event-container');
         eventContainer.id = eventInfo.id
+    
 
         let checkBoxContainer = document.createElement('div');
         checkBoxContainer.classList.add('checkbox-container');
 
 
         // DELETE BUTTON FUNCTION (NOT FINISHED)
-        document.getElementById('delete-event').onclick = function(){
-            let containerId = document.getElementById(eventContainer.id);
-        };
+        // document.getElementById('delete-event').onclick = function(){
+        //     let containerId = document.getElementById(eventContainer.id);
+        // };
 
         let checkBox = document.createElement('input');
         checkBox.type = 'checkbox';
@@ -322,6 +320,8 @@ const addEvent = (ev)=>{
         let eventDetailContainer = document.createElement('div');
         eventDetailContainer.classList.add('event');
         eventDetailContainer.id = eventContainer.id + 1;
+        
+        
 
         let eventTitle = document.createElement('h4');
         eventTitle.classList.add('event-name');
@@ -368,12 +368,13 @@ const addEvent = (ev)=>{
         popup.style.display = 'block';
     }
 
+
     // APPEND ELEMENTS TO PAGE
     checkBoxContainer.appendChild(checkBox);
     eventDetailContainer.appendChild(eventTitle);
     eventDetailContainer.appendChild(eventAddress);
     eventDetailContainer.appendChild(eventDates);
-    eventDetailContainer.appendChild(eventTime);
+    eventDetailContainer.appendChild(eventTime); 
 
     dBlockEventDetails.appendChild(dBlockEventTitle);
 
@@ -387,6 +388,7 @@ const addEvent = (ev)=>{
 
 
 
+
     // ADD EVENT TO STORAGE ARRAY
     day.push(eventInfo);  
     document.forms[0].reset();
@@ -396,6 +398,7 @@ const addEvent = (ev)=>{
     hideEventModal();
     hideOverlay();
     console.log('Event created')
+
 }
 
 
